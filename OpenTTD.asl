@@ -65,7 +65,7 @@ init {
         version = "1.12.1";
     } else if(current.Revision131 == "13.1") {
         version = "1.13.1";
-    }else if(current.Revision134 == "TD 13.4") {
+    }else if(current.Revision134 == "13.4") {
         version = "1.13.4";
     }
 }
