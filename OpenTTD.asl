@@ -5,7 +5,7 @@ state("OpenTTD") {
 
     string6 Revision131 : "openttd.exe", 0x00949D24; // _openttd_revision for 1.13.1
 
-    string7 Revision134 : "openttd.exe", 0x00B5A6F8, 0x9B8; // _openttd_revision for 1.13.4
+    string6 Revision134 : "openttd.exe", 0x00B579C8, 0xA8, 0x8; // _openttd_revision for 1.13.4
 }
 
 
