@@ -5,10 +5,8 @@ state("OpenTTD") {
 
     string6 Revision131 : "openttd.exe", 0x00949D24; // _openttd_revision for 1.13.1
 
-    string6 Revision134 : "openttd.exe", 0x00B579C8, 0xA8, 0x8; // _openttd_revision for 1.13.4
+    string6 Revision134 : "openttd.exe", 0x0094CD24; // _openttd_revision for 1.13.4
 }
-
-
 
 state("OpenTTD", "1.11.2") {
     int GameMode : "openttd.exe", 0x007d17e0; // _game_mode
@@ -65,7 +63,7 @@ init {
         version = "1.12.1";
     } else if(current.Revision131 == "13.1") {
         version = "1.13.1";
-    }else if(current.Revision134 == "13.4") {
+    } else if(current.Revision134 == "13.4") {
         version = "1.13.4";
     }
 }
