@@ -4,6 +4,8 @@ state("OpenTTD") {
     string6 Revision121 : "openttd.exe", 0x007d2394; // _openttd_revision for 1.12.1
 
     string6 Revision131 : "openttd.exe", 0x00949D24; // _openttd_revision for 1.13.1
+
+    string6 Revision134 : "openttd.exe", 0x0094CD24; // _openttd_revision for 1.13.4
 }
 
 state("OpenTTD", "1.11.2") {
@@ -33,6 +35,15 @@ state("OpenTTD", "1.13.1") {
     long TotalScore : "openttd.exe", 0x00B54258; // _score_part[0][9]
 }
 
+state("OpenTTD", "1.13.4") {
+    int GameMode : "openttd.exe", 0x00B57A8C; // _game_mode
+    int SwitchMode : "openttd.exe", 0x00B57AB0; // _switch_mode
+
+    long Money : "openttd.exe", 0x00AFF2D0, 0, 0x58; // _company_pool.data[0]->money
+    long Loan : "openttd.exe", 0x00AFF2D0, 0, 0x68; // _company_pool.data[0]->current_loan
+    long TotalScore : "openttd.exe", 0x00B57328; // _score_part[0][9]
+}
+
 startup {
     settings.Add("reset", false, "Reset on return to menu");
     settings.Add("start", false, "Start on level loaded");
@@ -52,6 +63,8 @@ init {
         version = "1.12.1";
     } else if(current.Revision131 == "13.1") {
         version = "1.13.1";
+    } else if(current.Revision134 == "13.4") {
+        version = "1.13.4";
     }
 }
 
